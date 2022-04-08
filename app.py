@@ -420,12 +420,12 @@ def readRegrade() -> List[List]: #Returns a list of dicts of all students in the
     return regrade_dict
 
 def readFeedback() -> List[List]: #Returns a list of dicts of all students in the db
-    result = FeedBack.query.all() #Queries all users
+    result = FeedBack.query.all() #Queries all Feedback
     feedback_dict = []
     for feedback in result:
-        studentfeedback = feedback.
-        feedback_dict.append(request)
-    return regrade_dict
+        studentfeedback = feedback.getFeedBackInfo()
+        feedback_dict.append(studentfeedback)
+    return feedback_dict
 
 
 
