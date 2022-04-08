@@ -1,0 +1,121 @@
+*{
+    margin: 0px;
+    font-family: 'Mulish', sans-serif;
+}
+
+body{
+    height: 100%;
+    background-color: #042444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-form{
+    width: 380px;
+    height: 825px;
+    background-color: white;
+    border: 1px solid #DFE0EB;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.error-block{
+    width: 300px;
+    background-color: #FF3737;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.sign-in-infobox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.b20-login-logo{
+    margin-top: 50px;
+}
+
+.sign-in-txt{
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    
+
+    color: #252733;
+}
+
+.sign-in-note{
+    margin-top: 15px;
+    font-size: 14px;
+    color: #9FA2B4;
+}
+
+.form-input{
+    display: flex;
+   
+    flex-direction: column;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+.login-info-prompt{
+    margin-top: 24px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #9FA2B4;
+}
+
+.input-box{
+    background-color: #FCFDFE;
+    border: 1px solid #F0F1F7;
+    border-radius: 8px;
+    height: 40px;
+}
+
+::placeholder {
+    color: #042444;
+    opacity: 0.5;
+    text-indent: 20px;
+    font-size: 14px;
+    margin-left: 130px;
+}
+
+.submit-btn{
+    margin-top: 50px;
+    width: 310px;
+    height: 48px;
+    background: #3751FF;
+    /* button / accent default */
+
+    box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+    border: 1px solid #3751FF;
+    border-radius: 8px;
+
+    color: #FFFFFF;
+} 
+
+.submit-btn:hover{background-color:#5165e2 ;}
+
+.submit-btn:focus{background-color: #031aac;}
+
+.login-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    color: #afafaf;
+    text-decoration: none;
+}
+
+#login-text{
+    color: #031aac;
+}

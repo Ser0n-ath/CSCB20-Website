@@ -1,0 +1,190 @@
+*{
+    font-family: 'Mulish', sans-serif;
+    margin: 0px;
+}
+
+
+.labs-info-container{
+    position: relative;
+    top: 80px;
+}
+
+.labs-info-card-container{
+    margin: auto auto;
+    margin-bottom: 100px;
+    height: 400px;
+    width: 1234px;
+    display: flex;  
+    flex-direction: column;
+    justify-content: center; 
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+
+.lab-overview-container{
+    margin-top: -50px;
+}
+
+
+.assignmentinfo-overview-body{
+    margin-left: 45px;
+    font-size: 16px;
+    width: 1160px;
+    font-weight: lighter;
+}
+
+.assignmentinfo-overview-topic{
+    margin-top: 30px;
+    margin-left: 40px;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+.card-header{
+    margin-top: 32px;
+    margin-left: 45px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.online-person-card-header{
+    margin-top: 32px;
+    margin-left: 45px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.online-person-body{
+    margin-left: 45px;
+    font-size: 16px;
+    width: 1160px;
+    font-weight: lighter;
+}
+.in-person-card-header{
+    margin-top: 32px;
+    margin-left: 45px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.in-person-body{
+    margin-left: 45px;
+    font-size: 16px;
+    width: 1160px;
+    font-weight: lighter;
+}
+
+.lab-containers{
+    margin: auto auto;
+    margin-top: 165px;
+    margin-bottom: 165px;
+    width: 1234px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+
+
+.lab-container{
+    margin: auto auto;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    margin-left: 100px;
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+
+
+.lab-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto auto;
+    margin-top: 100px;
+    width: 125px;
+    height: 40px;
+    border: none;
+    background: #3751FF;
+    box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+    border-radius: 8px;
+    color:white;
+}
+
+.lab-btns{
+    margin-top: 150px;
+}
+.assignment-content-body{
+    margin-top: 10px;
+}
+
+.assignment-button{
+    margin-top: 170px;
+}
+
+.assignment-button:hover{
+    background-color: #4054d3;
+}
+
+.assignment-button:active{
+    background-color: #1a38fa;
+}
+
+.lab-header{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+.lab-overview-header{
+    margin-top:20px;
+    text-align: center;
+}
+.lab-overview{
+    margin-top:20px;
+}
+
+.lab-btns:hover{
+    color: #000000;
+}
+
+.red{
+    background-color:#e90505;
+}
+
+.blue{
+    background-color: #00308F;
+}
+
+.lightblue{
+    background-color: #1F75FE;
+}
+
+.green{
+    background-color: #006A4E;
+}
+
+.cyan{
+    background-color: #008B8B;
+}
+
+.gold{
+    background-color: #FEBE10;
+}
+
+.lavender{
+    background-color: #d1d1ff;
+}
+
+.purple{
+    background-color: #662d91;
+}
+
+.orange{
+    background-color: #f09622;
+}
+
+.pink{
+    background-color: #c01b5d;
+}

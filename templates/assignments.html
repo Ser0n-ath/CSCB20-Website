@@ -1,0 +1,113 @@
+{% extends "navtemplate.html" %}
+
+{% block head %}
+    <title>B20 Assignments</title>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/assignments.css')}}"/>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/table.css')}}"/>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/footer.css')}}"/>
+{% endblock %}
+
+{% block content %}
+{% if session.name %}
+    <div class = "assignment-info-container">
+        <div class = "assignmentinfo-card-container">
+            <div class = "card-header assignment-header">Assignments</div>
+            <div class = "assignmentinfo-overview-body">Assignments are for applying what you learned in class to real web application</div>
+            
+            <div class = "card-header">Academic Offence</div>
+            <div class = "assignmentinfo-overview-body">Academic Offenses: All of the work you submit must be your own and your work must not be 
+                submitted by someone else. Plagiarism is academic fraud and is taken seriously. Please read the Rules and Regulations from the U of T Calendar 
+                (especially the Code of Behaviour on Academic Matters)
+            </div>
+        </div>
+
+
+        <div class = "assignment-container">
+            <div class = "assignment-slice">
+                <div class = "assignment-info">
+                    <div class = "assigment-header">Assignments #1</div>
+                    <img class =  "image-container" src="{{url_for('static', filename='images/Sqlite.svg')}}" alt="SQLlite logo">
+                    <div class = "assignment-name">Relational Algerbra & SQLite</div>
+                    <div class = "assignment-description">This assignment will give you lots of practice on relational algerbra and 
+                        SQLlite. Please see the handout below.</div>
+                    <div class = "assignment-button">
+                        <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button">View</button></a>
+                    </div>
+                </div>
+
+                <div class = "assignment-update">
+                    <div class = "assignment-update-header">Update for A1</div>
+                    <div class = "assignment-content-body">
+                        <ul>
+                            <li>Question 1 has been changed. Only 1</li>
+                            <li>Q2 Typo: Instead of join, do something else.</li>
+                            <li>Question 3 has been changed</li>
+
+                        </u;>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "assignment-slice">
+                <div class = "assignment-info">
+                    <div class = "assigment-header">Assignments #2</div>
+                    <img class = "image-container" src="{{url_for('static', filename='images/htmllogo.svg')}}" alt="HTML5 logo">
+                    <div class = "assignment-name">HTML/CSS</div>
+                    <div class = "assignment-description">This assignment will give you practice on developing html/css with best 
+                        principles. Please see handout below.
+                    </div>
+                    <div class = "assignment-button">
+                        <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button">View</button></a>
+                    </div>
+                </div>
+
+                <div class = "assignment-update">
+                    <div class = "assignment-update-header">Update for A2</div>
+                    <div class = "assignment-content-body">
+                        <ul>
+                            <li>Question 1 has been changed. Only 1</li>
+                            <li>Q2 Typo: Instead of join, do something else.</li>
+                            <li>Question 3 has been changed</li>
+
+                        </u;>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "assignment-slice">
+                <div class = "assignment-info">
+                    <div class = "assigment-header">Assignments #3</div>
+                    <img class = "image-container" src="{{url_for('static', filename='images/flask.svg')}}" alt="Flask logo">
+                    <div class = "assignment-name">Flask</div>
+                    <div class = "assignment-description">You will be developing a fullstack application which gives you
+                        practice developing real world applications. 
+                    </div>
+                    
+                    <div class = "assignment-button">
+                        <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button">View</button></a>
+                    </div>
+
+                </div>
+
+                <div class = "assignment-update">
+                    <div class = "assignment-update-header">Update for A3</div>
+                    <div class = "assignment-content-body">
+                        <ul>
+                            <li>Question 1 has been changed. Only 1</li>
+                            <li>Q2 Typo: Instead of join, do something else.</li>
+                            <li>Question 3 has been changed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <img class = "logo" src="{{url_for('static', filename='images/courselogo.svg')}}" alt="utsc cscb20 course logo">
+        <a class = "faculty" href= "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank" >Faculty of CS</a>
+        <div class = "creators">Designed and Developed By Seron, Ryan & Jason</div>
+    </footer>
+
+{% endif %}
+{% endblock %}

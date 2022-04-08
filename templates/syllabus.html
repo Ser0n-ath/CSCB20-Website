@@ -1,0 +1,186 @@
+{% extends "navtemplate.html" %}
+{% block title %} {{ pagename }} {% endblock %}
+
+{% block head %}
+    <title>B20 Syllabus</title>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/syllabus.css')}}"/>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/table.css')}}"/>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/footer.css')}}"/>
+{% endblock %}
+
+{% block content %}
+{% if session.name %}
+
+    <div class = "syllabus-info-container">
+        <div class = "courseinfo-card-container">
+            <div class = "card-header">Course Objective</div>
+            <div class = "courseinfo-overview-body">The purpose of this course is to give students a practical introduction
+                to databases and Web app development. Topics we will study in this course include:
+            </div>
+            
+            <div class = "courseinfo-overview-topic">
+                <div class = "courseinfo-overview-topic-header">Database</div>
+                <ul>
+                    <li>Terminology and applications.</li>
+                    <li>Creating, query and updating databases</li>
+                    <li>The entity-relationship model for database design.</li>
+                </ul>
+            </div>
+
+            <div class = "courseinfo-overview-topic">
+                <div class = "courseinfo-overview-topic-header">Web documents and applications</div>
+                <ul>
+                    <li>Static and interactive documents</li>
+                    <li>Web servers and dynamically server generated content</li>
+                    <li>Web application development and interface with databases</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class = "expectation-mark-container">
+            <div class = "notice-container">
+                <div class = "notice-box">
+                    <div class = "notice-header">Tutorials</div>
+                    <div class = "notice-body">There are weekly tutorials. You are expected to attend and participate.</div>
+                </div>
+
+                <div class = "notice-box">
+                    <div class = "notice-header">Calendar</div>
+                    <div class = "notice-body">The calendar on the course website will indicate important due dates 
+                        for this year. </div>
+                </div>
+
+                <div class = "notice-box">
+                    <div class = "notice-header">Assignments</div>
+                    <div class = "notice-body">Assignment handouts will be avaliable on course website. All assignments must be submitted electronically, and will be graded for 
+                        correctness and style</div>
+                </div>
+
+
+            </div>
+
+            <div class = "mark-container">
+                <div class = "mark-header">
+                    <div class = "notice-header">Evaluation</div>
+                    <div class = "sub-notice-header">Course mark distribution</div>
+                </div>
+                <div class = "table-gen">
+                    <div class = "table-container">
+                        <div class = "table-row table-header">
+                            <div class = "header-row table-head">Work</div>
+                            <div class = "header-row table-head">Weight</div>
+                            <div class = "header-row table-head">Comment</div>
+                        </div>
+                        <div class = "table-row">
+                            <div class = "header-row">Assignment x3</div>
+                            <div class = "header-row">30%</div>
+                            <div class = "header-row">10% each</div>
+                        </div>
+                        <div class = "table-row table-row-alt">
+                            <div class = "header-row">Midterm</div>
+                            <div class = "header-row">30%</div>
+                            <div class = "header-row">Around week 7-8</div>
+                        </div>
+                        <div class = "table-row">
+                            <div class = "header-row">Exam</div>
+                            <div class = "header-row">40%</div>
+                            <div class = "header-row">Good Luck :)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        
+            <div class = "table-container-lec">
+                <div class = "table-row table-header">
+                    <div class = "header-row table-head">Work</div>
+                    <div class = "header-row table-head">Date</div>
+                    <div class = "header-row table-head">Pre-readings</div>
+                    <div class = "header-row table-head">Topic & Lecture Materials</div>
+                </div>
+                <div class = "table-row">
+                    <div class = "header-row">Intro To DB</div>
+                    <div class = "header-row">Week 1</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row"><a class = "lec-link" href="resources/pdf/dummy.pdf" target = "_blank">Lecture 1</a>
+                    </div>
+                </div>
+                <div class = "table-row table-row-alt">
+                    <div class = "header-row">Relational Algebra</div>
+                    <div class = "header-row">Week 2</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+                <div class = "table-row">
+                    <div class = "header-row">Intro to SQLite</div>
+                    <div class = "header-row">Week 3</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+                <div class = "table-row table-row-alt">
+                    <div class = "header-row">Queries with SQLite</div>
+                    <div class = "header-row">Week 4</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+                <div class = "table-row">
+                    <div class = "header-row">Intro to Web Development</div>
+                    <div class = "header-row">Week 5</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+                <div class = "table-row table-row-alt">
+                    <div class = "header-row">Intro to HTML, CSS, Flask</div>
+                    <div class = "header-row">Week 6</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+                <div class = "table-row">
+                    <div class = "header-row">Midterm Week</div>
+                    <div class = "header-row">Week 7</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+                <div class = "table-row table-row-alt">
+                    <div class = "header-row">Intro to JS</div>
+                    <div class = "header-row">Week 8</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+                <div class = "table-row">
+                    <div class = "header-row">Flask + SQL</div>
+                    <div class = "header-row">Week 9</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+                <div class = "table-row table-row-alt">
+                    <div class = "header-row">Flask, Sessions and Auth.</div>
+                    <div class = "header-row">Week 10</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+                <div class = "table-row">
+                    <div class = "header-row">Flask & SQL</div>
+                    <div class = "header-row">Week 11</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+                <div class = "table-row table-row-alt">
+                    <div class = "header-row">Wrap-up</div>
+                    <div class = "header-row">Week 12</div>
+                    <div class = "header-row">None</div>
+                    <div class = "header-row">Lecture alpha</div>
+                </div>
+            </div>
+    </div>
+
+    <footer>
+        <img class = "logo" src="{{url_for('static', filename='images/courselogo.svg')}}" alt="utsc cscb20 course logo">
+        <a class = "faculty" href= "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank" >Faculty of CS</a>
+        <div class = "creators">Designed and Developed By Seron, Ryan & Jason</div>
+    </footer>
+
+{% endif %}
+{% endblock %}

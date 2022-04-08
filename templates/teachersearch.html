@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>B20 Grades Teacher View</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/teachersearch.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/table.css') }}">
+
+    </head>
+    <body>
+        
+        <div class = "student-card">
+            <div class = "student-info-container">
+                <div class = "student-card-container">
+                    <div class = "card-header ">Student</div>
+                    <div class = "student-overview-body">This list contains all students currently enrolled in CSCB20 Winter 2022</div>
+                </div>
+            </div> 
+
+
+            <div class = "table-container-student">
+                <div class = "table-row table-header">
+                    <div class = "header-row table-head">View</div>
+                    <div class = "header-row table-head">Student Number</div>
+                    <div class = "header-row table-head">First Name</div>
+                    <div class = "header-row table-head">Last Name</div>
+                </div>
+
+                
+                {% for user in user_list %}
+                    {% if  loop.index % 2 %} <div class = "table-row">
+                    {% else %} <div class = "table-row table-row-alt">
+                    {% endif %}
+                    {% for key, value in user.items() %}
+                        {% if key == "uid" %} 
+                            {% set x = value %}
+                            <a class="register-btn" href="http://127.0.0.1:5000/grades/{{x}}">View</a>
+                        {% endif %}
+                        <div class = "header-row">{{value}}</div>
+                    {% endfor %}
+                        
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+
+
+
+        <div class = "regrade-card">
+            <div class = "regrade-info-container">
+                <div class = "regrade-card-container">
+                    <div class = "card-header ">Regrade Requests</div>
+                    <div class = "regrade-overview-body">List of all Regrade attempts.</div>
+                </div>
+            </div> 
+
+
+            <div class = "table-container-student">
+                <div class = "table-row table-header">
+                    <div class = "header-row table-head">View</div>
+                    <div class = "header-row table-head">Student Number</div>
+                    <div class = "header-row table-head">Title</div>
+                    <div class = "header-row table-head">Reason</div>
+                </div>
+
+                
+                {% for regrade in regrade_req %}
+                    {% if  loop.index % 2 %} <div class = "table-row">
+                    {% else %} <div class = "table-row table-row-alt">
+                    {% endif %}
+                    {% for key, value in regrade.items() %}
+                        {% if key == "uid" %} 
+                            {% set x = value %}
+                            <a class="register-btn" href="http://127.0.0.1:5000/grades/{{x}}">View</a>
+                        {% endif %}
+                        <div class = "header-row">{{value}}</div>
+                    {% endfor %}
+                        
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+
+
+
+
+            
+    </body>
+
+</html>

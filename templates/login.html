@@ -1,0 +1,34 @@
+{% block content %}
+
+        <title>B20 Sign in</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/table.css')}}"/>
+
+        <div class = "login-form">
+            <div class = "sign-in-infobox">
+                <img class = "b20-login-logo" src="{{url_for('static', filename='images/loginlogo.png')}}" />
+                <div class = "sign-in-txt">Sign in</div>
+                <div class = "sign-in-note">Enter your email and password below</div>
+
+                <div class = "error-block">{{msg}}</div>
+            </div>
+            <form class = "form-input" action="http://127.0.0.1:5000/login" method = "post">
+                <div class = login-info-prompt>UID</div>
+                <input type = "text" name = "uid" autocomplete="off" placeholder= "User Identification" class = "input-box"/>
+    
+                <div class = login-info-prompt>Password</div>
+                <input type = "password" name = "password" autocomplete="off" placeholder="Password" class = "input-box"/>
+         
+                <p>
+                    <input class = "submit-btn" type="submit"> 
+                </p>
+
+                <a class="register-btn" href="http://127.0.0.1:5000/register">Don't have an account? &nbsp; <span id = "register-text"> Register!</span> </a>
+            </form>
+        </div>
+
+        {% if error %}
+            <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+{% endblock %}
+

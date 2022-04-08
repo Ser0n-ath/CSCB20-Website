@@ -1,0 +1,182 @@
+{% extends "navtemplate.html" %}
+
+{% block head %}
+    <title>B20 Labs</title>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/labs.css')}}"/>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/table.css')}}"/>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/footer.css')}}"/>
+{% endblock %}
+
+{% block content %}
+{% if session.name %}
+
+    <div class = "labs-info-container">
+        <div class = "labs-info-card-container">
+            <div class = "lab-overview-container">
+                <div class = "card-header">Labs</div>
+                <div class = "assignmentinfo-overview-body">Tutorials will include collaborative problem-solving and practical demonstration of 
+                    various concepts taught in class. Problems solved by you during <br> these tutorials will 
+                    not  be  marked.  However,  attending  tutorials  will  fetch  2%  marks.  Submit  valid 
+                    reasons for not attending tutorials. </div>
+                <div class = "online-person-card-header">Online-Person Tutorials</div>
+                <div class = "online-person-body">For the online tutorials, attendance will be marked by your TA. Please do not share 
+                    your personal information (entire student ID) in group forums, <br> such as Zoom chat. 
+                </div>
+                <div class = "in-person-card-header">In-Person Tutorials</div>
+                <div class = "in-person-body">For in-person tutorials, TA will pass around a sheet, where you will record the last 
+                    four digits of student ID number. You need not write your name <br>or ID on the sheet 
+                    for privacy/confidentiality reasons.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "lab-containers">  
+        
+        <div class = "lab-container">
+            <div class = "lab-1-card-container">
+                <div class = "lab-header red">Tutorial 1</div>
+                <div class = "lab-overview-header"><h3>Overview</h3></div>
+                <div class = lab-overview>
+                    <ul>
+                        <li>N/A</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class = "lab-container">
+            <div class = "lab-2-card-container">
+                <div class = "lab-header pink">Tutorial 2</div>
+                <div class = "lab-overview-header"><h3>Overview</h3></div>
+                <div class = lab-overview>
+                    <ul>
+                        <li>Python Review</li>
+                        <li>Variable, Function, Lists, Loops, I/O etc.</li>
+                    </ul>
+                </div>
+            
+                <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button lab-button pink">Lab #2</button></a>
+
+            </div>
+        </div>
+
+        <div class = "lab-container">
+            <div class = "lab-1-card-container">
+                <div class = "lab-header orange">Tutorial 3</div>
+                <div class = "lab-overview-header"><h3>Overview</h3></div>
+                <div class = lab-overview>
+                    <ul>
+                        <li>Introduction to Relational Algebra</li>
+                        <li>Introduction to Basic SQLite Queries</li>
+                    </ul>
+                </div>
+                <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button lab-button orange">Lab #3</button></a>
+
+            </div>
+        </div>
+
+        <div class = "lab-container">
+            <div class = "lab-1-card-container">
+                <div class = "lab-header gold">Tutorial 4</div>
+                <div class = "lab-overview-header"><h3>Overview</h3></div>
+                <div class = lab-overview>
+                    <ul>
+                        <li>Practicing SQLite Queries</li>
+                    </ul>
+                </div>
+                <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button lab-button gold">Lab #4</button></a>
+
+            </div>
+        </div>
+
+        <div class = "lab-container">
+            <div class = "lab-1-card-container">
+                <div class = "lab-header cyan">Tutorial 5</div>
+                <div class = "lab-overview-header"><h3>Overview</h3></div>
+                <div class = lab-overview>
+                    <ul>
+                        <li>Advanced SQLite Queries (Views, Group By, etc.)</li>
+                    </ul>
+                </div>
+                <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button lab-button cyan">Lab #5</button></a>
+
+            </div>
+        </div>
+
+        <div class = "lab-container">
+            <div class = "lab-1-card-container">
+                <div class = "lab-header green">Tutorial 6</div>
+                <div class = "lab-overview-header"><h3>Overview</h3></div>
+                <div class = lab-overview>
+                    <ul>
+                        <li>Intro to Python Flask</li>
+                    </ul>
+                </div>
+                <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button lab-button green">Lab #6</button></a>
+            </div>
+        </div>
+
+        <div class = "lab-container">
+            <div class = "lab-1-card-container">
+                <div class = "lab-header lightblue">Tutorial 7</div>
+                <div class = "lab-overview-header"><h3>Overview</h3></div>
+                <div class = lab-overview>
+                    <ul>
+                        <li>N/A (Midterm Week)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class = "lab-container">
+            <div class = "lab-1-card-container">
+                <div class = "lab-header blue">Tutorial 8</div>
+                <div class = "lab-overview-header"><h3>Overview</h3></div>
+                <div class = lab-overview>
+                    <ul>
+                        <li>Introduction to CSS</li>
+                    </ul>
+                </div>
+                <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button lab-button blue">Lab #8</button></a>
+
+            </div>
+        </div>
+
+        <div class = "lab-container">
+            <div class = "lab-1-card-container">
+                <div class = "lab-header purple">Tutorial 9</div>
+                <div class = "lab-overview-header"><h3>Overview</h3></div>
+                <div class = lab-overview>
+                    <ul>
+                        <li>CSS Flexbox</li>
+                    </ul>
+                </div>
+                <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button lab-button purple">Lab #9</button></a>
+
+            </div>
+        </div>
+
+        <div class = "lab-container">
+            <div class = "lab-1-card-container">
+                <div class = "lab-header lavender">Tutorial 10</div>
+                <div class = "lab-overview-header"><h3>Overview</h3></div>
+                <div class = lab-overview>
+                    <ul>
+                        <li>Intro to JavaScript</li>
+                    </ul>
+                </div>
+                <a href="resources/pdf/dummy.pdf" target = "_blank"><button class = "assignment-button lab-button lavender">Lab #10</button></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <img class = "logo" src="resources/images/courselogo.svg" alt="utsc cscb20 course logo">
+        <a class = "faculty" href= "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank" >Faculty of CS</a>
+        <div class = "creators">Designed and Developed By Seron & Ryan</div>
+    </footer>
+
+{% endif %} 
+
+{% endblock %}

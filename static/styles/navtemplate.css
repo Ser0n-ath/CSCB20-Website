@@ -1,0 +1,64 @@
+*{
+    font-family: 'Mulish', sans-serif;
+    margin: 0px;
+}
+
+
+header{
+    background-color: #042444;
+}
+
+.body-container{
+    background-color: #F7F8FC;
+}
+
+
+/*ne*/
+.navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: #042444;
+    opacity: 100%;
+    width: 100%;
+    height: 80px;
+    z-index: 9;
+}
+
+.nav-links{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+.nav-item{
+    list-style: none;
+    margin-top: 5px;
+    margin-right: 50px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.nav-item-btn:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item-btn:hover{
+    text-decoration: none;
+    color: black;
+}
+
+
+.child-component-container{
+    display: flex;
+    position: relative;
+    top: 80px;
+}

@@ -1,0 +1,133 @@
+
+.syllabus-info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+}
+.courseinfo-card-container{
+    margin: auto auto;
+    margin-top: 165px;
+    height: 360px;
+    width: 1234px;
+    display: flex;  
+    flex-direction: column; 
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.courseinfo-overview-body{
+    margin-top: 16px;
+    margin-left: 45px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.courseinfo-overview-topic{
+    margin-top: 30px;
+    margin-left: 40px;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+
+.card-header{
+    margin-top: 30px;
+    margin-left: 30px;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.expectation-mark-container{
+    margin: auto auto;
+    height: 410px;
+    width: 1234px;
+    margin-top: 70px;
+    display: flex;
+    gap: 120px;
+}
+
+.mark-container{
+    height: 380px;
+    width: 625px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)}
+
+.notice-container{
+    height: 380px;
+    width: 625px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)}
+
+.notice-box, .mark-header{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-left: 28px;
+    margin-right: 10px;
+}
+
+.mark-header{
+    display: flex;
+    align-items: center;
+}
+
+.notice-header{
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.notice-body{
+    margin-top: 2px;
+    margin-left: 15px;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+.table-gen{
+    margin: auto auto;
+    margin-top: 20px;
+}
+
+.table-container-lec {
+    margin: auto auto;
+    margin-top: 28px;
+    height: 750px;
+    width: 1234px;
+    background-color: white;
+    border-radius: 20px;
+    display: table;
+    border-collapse: collapse;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.lec-link{
+    text-decoration: none;
+    color: black;
+}
+
+.lec-link:visited .lec-link:link{
+    text-decoration: none;
+    color: black;
+}
+
+.lec-link:visited{
+    text-decoration: none;
+    color: black;
+}
+
+.lec-link:hover{
+    text-decoration: none;
+    color: black;
+}

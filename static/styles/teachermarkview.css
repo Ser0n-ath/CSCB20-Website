@@ -1,0 +1,125 @@
+*{
+    margin: 0px;
+    font-family: 'Mulish', sans-serif;
+}
+
+body{
+    background-color: #F7F8FC;
+
+}
+
+.student-info-container{
+    margin: auto auto;
+    height: 125px;
+    width: 1234px;
+    display: flex;  
+    flex-direction: column; 
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    top: 120px;
+    
+}
+
+
+.student-overview-body{
+    margin-top: 10px;
+    margin-left: 45px;
+    font-size: 16px;
+    width: 1160px;
+    font-weight: lighter;
+}
+
+
+.card-header{
+    margin-top: 32px;
+    margin-left: 45px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.body-marks-student{
+    display: flex;
+    width: 1234px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 40px; 
+    position:relative;  
+    top: 120px;
+}
+.table-container{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form-input{
+    margin-left: 150px;
+    width: 380px;
+    height: 380px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.login-form{
+    width: 380px;
+    height: 580px;
+    background-color: white;
+    border: 1px solid #DFE0EB;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.submit-btn{
+    margin-left: 40px;
+    margin-top: 25px;
+    width: 310px;
+    height: 48px;
+    background: #3751FF;
+    /* button / accent default */
+
+    box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+    border: 1px solid #3751FF;
+    border-radius: 8px;
+
+    color: #FFFFFF;
+} 
+
+.submit-btn:hover{background-color:#5165e2 ;}
+
+.submit-btn:focus{background-color: #031aac;}
+
+
+.regrade-info-prompt{
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.input-box{
+    margin: auto;
+    margin-top: 5px;
+    margin-left: 10px;
+    background-color: #FCFDFE;
+    border: 1px solid #F0F1F7;
+    border-radius: 8px;
+    width: 350px;
+    height: 50px;
+
+}
+
+::placeholder {
+    color: #042444;
+    opacity: 0.5;
+    text-indent: 20px;
+    font-size: 14px;
+    margin-left: 130px;
+}
+
+.regrade-info-prompt{
+    font-size: 16px;
+    margin-bottom: 10px;
+}

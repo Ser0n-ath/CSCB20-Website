@@ -1,0 +1,61 @@
+{% extends "navtemplate.html" %}
+
+{% block head %}
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/studentfeedbackview.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/table.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/footer.css') }}">  
+        <title>B20 Student Feedback For Instructors</title>
+
+{% endblock %}
+{% block content %}
+{% if session.name %}
+        <div class = "feedback-card">
+            <div class = feedback-card-head> Feedback</div>
+            <div class = "feedback-box-overlay">
+                <div class = "feedback-box-overlay-name">Your feedback will help improve future iterations of this course.</div>
+                <div class = "feedback-box-overlay-body">All submissions are anonymous</div>
+            </div>
+
+            
+            <form class = form-input action="http://127.0.0.1:5000/studentfeedback" method = "post">
+                <div class = "question">
+                    <div class = "feedback" label for="Question1">1) What do you like about the instructor teaching? </label></div>
+                    <textarea type="text" id = "Question1" name="Question1" autocomplete="off"> </textarea>
+                </div>
+
+                <div class = "question">
+                    <div class = "feedback" label for="Question2">2) What do you recommend the instructor to do to improve their teaching?</label></div>
+                    <textarea type="text" id="Question2" name="Question2" autocomplete="off"> </textarea>
+                </div>
+
+                <div class = "question">
+                    <div class = "feedback" label for="Question3">3) What do you like about the labs? </label></div>
+                    <textarea type="text" id="Question3" name="Question3" autocomplete="off"> </textarea>
+                </div>
+
+                <div class = "question">
+                    <div class = "feedback" label for="Question4">4) What do you recommend the lab instructors to do to improve their lab teaching? </label></div>
+                    <textarea type="text" id="Question4" name="Question4" autocomplete="off"> </textarea>
+                </div>
+
+                <div class = "question">
+                    <div class = "feedback" label for="ChooseTeacher">5) Which Instructor would you like to send this feedback to? </label></div>
+                    <div class = "dropdownbox">
+                    <select name= ChooseTeacher method="GET" action="/">
+                        {% for teacher in teachers %}
+                        <option value= "{{teacher}}" SELECTED>{{teacher}}</option>"
+                        {% endfor %}
+                    </select>
+                    </div>
+                </div>
+            </form>
+            <button id = "resp" class = "submit-res">Submit</button>
+        </div>
+        
+        <footer>
+            <img class = "logo" src="{{url_for('static', filename='images/courselogo.svg')}}" alt="utsc cscb20 course logo">
+            <a class = "faculty" href= "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank" >Faculty of CS</a>
+            <div class = "creators">Designed and Developed By Seron, Ryan & Jason</div>
+         </footer>
+         {% endif %}
+         {% endblock %}

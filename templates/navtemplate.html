@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel = "stylesheet" href ="{{ url_for('static', filename = 'styles/navtemplate.css')}}">
+        {% block head%} {% endblock %}
+    </head>
+
+    <body>
+        <nav class = "navigation">
+            {% if session.name %}
+            <ul class = "nav-links">
+                <li class = "nav-item"><a id = "logo" href = "{{url_for('home')}}" target = "_self"><img src = "{{url_for('static', filename='images/logo.png')}}"/></a></li>
+                <li class = "nav-item"><a class = "nav-item-btn" href = "{{ url_for('home') }}" target = "_self">Home</a></li>
+                <li class = "nav-item"><a class = "nav-item-btn" href = "{{ url_for('syllabus')}}" target = "_self">Syllabus</a></li>
+                <li class = "nav-item"><a class = "nav-item-btn" href = "{{ url_for('assignments')}}">Assignments</a></li>
+                <li class = "nav-item"><a class = "nav-item-btn" href = "{{ url_for('labs')}}">Labs</a></li>
+                <li class = "nav-item"><a class = "nav-item-btn" href = "{{ url_for('mark_page')}}">Grades</a></li>
+                <li class = "nav-item"><a class = "nav-item-btn" href = "https://markus.utsc.utoronto.ca/cscb20w22/?locale=en" target = "_blank">Markus</a></li>
+                <li class = "nav-item"><a class = "nav-item-btn" href = "https://piazza.com/class/kxj5alixpjg4ft" target = "_blank">Piazza</a></li>
+                <li class = "nav-item"><a class = "nav-item-btn" href = "{{ url_for('StudentFeedback')}}">Feedback</a></li>
+                <li class = "nav-item"><a class = "nav-item-btn" href = "{{ url_for('logout') }}" target = "_self">Log Out</a></li>
+            </ul>
+            {% else %}
+            <li class = "nav-item"><a class = "nav-item-btn" href = "{{ url_for('login')}}">Log In</a></li>
+            <li class = "nav-item"><a class = "nav-item-btn" href = "{{ url_for('register')}}">Register</a></li>
+            {% endif %}
+        </nav>
+
+		{% block content %}
+            
+        {% endblock %}
+
+
+    </body>
+
+
+
+</html

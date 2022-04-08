@@ -1,0 +1,168 @@
+{% extends "navtemplate.html" %}
+{% block title %} {{ pagename }} {% endblock %}
+
+{% block head %}
+    <title>B20 Home</title>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/home.css')}}"/>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/footer.css')}}"/>
+    <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/table.css')}}"/>
+{% endblock %}
+
+{% block content %}
+{% if session.name %}
+    <header>
+        <div class = "banner-container">
+            <div class = "course-information">
+                <div class = "course-id">
+                    <div class = "course-code">CSCB20</div>
+                    <div class = "course-season">Winter 2022</div>
+                </div>
+                <div class = "course-name">Introduction to Databases and Web Applications</div>
+            </div>
+            
+            <div class = "course-descriptor">A practical introduction to databases and Web app development. Databases: terminology and applications; creating, 
+                querying and updating databases; the entity-relationship model for database design. Web documents and applications: 
+                static and interactive documents; Web servers and dynamic server-generated content; Web application development and
+                interface with databases.
+            </div>
+        </div>
+    </header>
+
+    <div class = "welcome-user">
+        <h1>Welcome to CSCB20, {{session.name['first_name']}} {{session.name['last_name']}}</h1>
+    </div> 
+
+    <div class = "parent-content">
+        <div class = "course-info-card">
+            <div class = "courseinfo-card-container">
+                <div class = "card-header">Course Objective</div>
+                <div class = "courseinfo-overview-body">The purpose of this course is to give students a practical introduction
+                    to databases and Web app development. Topics we will study in this course include:
+                </div>
+                
+                <div class = "courseinfo-overview-topic">
+                    <div class = "courseinfo-overview-topic-header">Database</div>
+                    <ul>
+                        <li>Terminology and applications.</li>
+                        <li>Creating, query and updating databases</li>
+                        <li>The entity-relationship model for database design.</li>
+                    </ul>
+                </div>
+
+                <div class = "courseinfo-overview-topic">
+                    <div class = "courseinfo-overview-topic-header">Web documents and applications</div>
+                    <ul>
+                        <li>Static and interactive documents</li>
+                        <li>Web servers and dynamically server generated content</li>
+                        <li>Web application development and interface with databases</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class = "courseinfo-card-container">
+                <div class = "card-header">Instructor Details</div>
+                <div class = "courseinfo-instructor-detail-body">
+                    <div class="courseinfo-instructorname">Dr. Purva Gawde</div>
+                    <div class = "courseinfo-instructor-detail-container">
+                        <div class = "courseinfo-instructor-detail">
+                            <div class = "instructor-detail-property">Email</div>
+                            <div class = "instructor-detail-result">purva.gawde@utsc.utoronto.ca</div>
+                        </div>
+                        <div class = "courseinfo-instructor-detail">
+                            <div class = "instructor-detail-property">Office</div>
+                            <div class = "instructor-detail-result">IC493</div>
+                        </div>
+                        <div class = "courseinfo-instructor-detail">
+                            <div class = "instructor-detail-property">Phone</div>
+                            <div class = "instructor-detail-result">(416) 208-4745</div>
+                        </div>
+                        <div class = "courseinfo-instructor-detail">
+                            <div class = "instructor-detail-property">Lecture</div>
+                            <div class = "instructor-detail-result">Mondays 9:15-11:00 in HW 216</div>
+                        </div>
+                        <div class = "courseinfo-instructor-detail">
+                            <div class = "instructor-detail-property">Office Hour</div>
+                            <div class = "instructor-detail-result">W 11:00-12:00</div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "courseinfo-instructor-contact-policy">Questions relating to instruction material should be posted on piaaza.</div>
+            </div>
+        </div>
+        <div class = "announcement-card-container">
+            <div class = "announcement-card-header">Announcement</div>
+                <div class = "message-released">
+                    <div class = "announcment-message-container">
+                            <div class = "annoucement-message">
+                                <img src="{{url_for('static', filename = 'images/profilepic1.png')}}" class="profilepic">
+                                <div class = "message-contxt">
+                                    <div class = "message-header">
+                                        <div class ="message-name">A1 Meme Festa Update</div>
+                                        <div class ="message-post-date">Posted on March 11 2022</div>
+                                    </div>
+                                    <div class = "message-content">
+                                        <div class = "message-body">
+                                            An update on the marking scheme. After reviewing some feedback on the bonus marks,
+                                            we have decided to give everyone who made a meme 1 bonus mark... 
+                                        </div>
+                                        <div class = "message-1-see-more">See more</div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class = "announcment-message-container">
+                        <div class = "annoucement-message">
+                            <img src="{{url_for('static', filename = 'images/profilepic1.png')}}" class="profilepic">
+                            <div class = "message-contxt">
+                                <div class = "message-header">
+                                    <div class ="message-name">Assignment 2 Released!</div>
+                                    <div class ="message-post-date">Posted on March 11 2022</div>
+                                </div>
+                                <div class = "message-content">
+                                    <div class = "message-body">
+                                        Hello all,Assignment 2 has been uploaded on Quercus.It is based on HTML, CSS and basic Python Flask.
+                                        The due date for this assignment is March 15.Purva ...
+                                    </div>
+                                    <div class = "message-1-see-more">See more</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "announcment-message-container">
+                        <div class = "annoucement-message">
+                            <img src="{{url_for('static', filename = 'images/profilepic1.png')}}" class="profilepic">
+                            <div class = "message-contxt">
+                                <div class = "message-header">
+                                    <div class ="message-name">Final Exams</div>
+                                    <div class ="message-post-date">Posted on March 12 2022</div>
+                                </div>
+                                <div class = "message-content">
+                                    <div class = "message-body">
+                                        Hello All, Exams are scheduled to be released the day before. A list of things that can be expected can be found in the syllabus. 
+                                        ie everything. Good luck.
+                                    </div>
+                                    <div class = "message-1-see-more">See more</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class ="calendar-container">
+            <iframe class = "calendar" src="https://calendar.google.com/calendar/embed?src=062btcpe6ukskfptv62jsc7sug%40group.calendar.google.com&amp;ctz=America/Toronto"></iframe>
+        </div>
+    
+    </div>
+
+    <footer>
+        <img class = "logo" src="{{url_for('static', filename='images/courselogo.svg')}}" alt="utsc cscb20 course logo">
+        <a class = "faculty" href= "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank" >Faculty of CS</a>
+        <div class = "creators">Designed and Developed By Seron, Ryan & Jason</div>
+    </footer>
+    
+{% endif %}
+{% endblock %}

@@ -1,0 +1,294 @@
+*{
+    font-family: 'Mulish', sans-serif;
+    margin: 0px;
+}
+header{
+    background-color: #042444;
+    height: 450px;
+}
+
+.welcome-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.banner-container{
+    display: flex;
+    flex-direction: column;
+    color:  white;
+    width: 100%;
+}
+
+
+.header-container{
+    height: 450px;
+}
+.course-information{
+    margin: auto auto;
+    margin-top: 150px;
+    gap: 20px;
+}
+.course-name{
+    font-size: 48px;
+    font-weight: lighter;
+}
+.course-code{
+    font-size: 48px;
+    font-weight: bold;
+}
+.course-information{
+    display: flex;
+}
+
+.course-season{
+    text-align: center;
+    font-size: 24px;
+}
+.course-descriptor{
+    margin: auto auto;
+    margin-top: 50px;
+    width: 1050px;
+    color: #F5F5F5;
+    font-weight:lighter;
+    line-height: 1.2;
+    font-size: 20px;
+    
+}
+
+
+
+.course-info-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.course-info-card{
+    gap: 150px
+}
+
+/*Card styling*/
+.courseinfo-card-container{
+    margin-top: 65px;
+    height: 450px;
+    width: 540px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+
+.courseinfo-overview-body{
+    margin-top: 36px;
+    margin-left: 45px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.courseinfo-overview-topic{
+    margin-top: 30px;
+    margin-left: 40px;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+.card-container{
+    margin-top: 65px;
+    height: 150px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.card-header{
+    margin-top: 30px;
+    margin-left: 30px;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.courseinfo-instructor-detail-body{
+    margin-top: 36px;
+    margin-left: 45px;
+}
+
+.courseinfo-instructor-detail{
+  
+    display: flex;
+}
+
+.courseinfo-instructorname{
+    font-size: 24px;
+    font-weight: lighter;
+}
+.courseinfo-instructor-detail-container{
+    margin-top: 20px;
+}
+.instructor-detail-result{
+    margin-left: auto;
+    margin-right: 50px;
+}
+.instructor-detail-property{
+    text-decoration: underline;
+    font-weight: lighter;
+}
+
+.courseinfo-instructor-contact-policy{
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 100;
+}
+
+.courseinfo-instructor-detail{
+    display: flex;
+    margin-top: 10px;
+
+}
+
+/*---------------Announcement---------------*/
+
+.announcement-card-container{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 1250px;
+    height: 425px;
+    margin: auto auto;
+    margin-top: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.message-header{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 20px;
+    gap: 50px;
+}
+
+
+.annoucement-message{
+    display: flex;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+.message-content{
+    margin-top: 5px;
+    margin-left: 20px;
+    font-weight: lighter;
+}
+
+.message-body .message-1-see-more{
+    margin-left: 30px;
+}
+
+.message-body{
+    width: 1000px;
+}
+.profilepic{
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
+}
+
+.message-name{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.message-post-date{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.announcement-card-header{
+    margin-top: 30px;
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.message-released{
+    margin-left: 50px;
+    margin-top: 0;
+}
+/*---------------Announcement---------------*/
+.announcment-message-container{
+    margin-top: 10px;
+}
+
+
+.calendar{
+    margin: auto auto;
+    width: 1250px;
+    height:  800px;
+    border: none;
+}
+
+.calendar-container{
+    display: flex;
+    margin: auto auto;
+    margin-top: 100px;
+    border-radius: 50px;
+}
+
+
+.banner{
+    margin-top: 90px;
+    height: 150px;
+    bottom: 0px;
+    background-color: #042444;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 300px;
+    height: 100px;
+}
+
+.creators{
+    color: white;
+    align-self: flex-end;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.faculty{
+    margin-right: 120px;
+    text-align: center;
+}
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #d3dddd;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:#838d83;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5A6063;
+  }

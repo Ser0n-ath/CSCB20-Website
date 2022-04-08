@@ -1,0 +1,41 @@
+*{
+    font-family: 'Mulish', sans-serif;
+    margin: 0px;
+    font-weight: lighter;
+}
+
+/*Generic styling for tables
+    -Should be used across site for consistent ui design
+*/
+
+.table-container {
+    height: 230px;
+    width: 350px;
+    background-color: white;
+    border-radius: 20px;
+    display: table;
+    border-collapse: collapse;
+    text-align: center;
+}
+ 
+.table-header{
+    background-color: #E0E0E0;
+}
+
+ .header-row {
+    font-weight: bold;
+    font-size: 16px;
+    display: table-cell;
+    padding-top: 18px;
+    border: 1px solid #D0D0D0;
+ }
+ 
+ .table-row-alt{
+     background-color: #F1F1F1;
+ }
+ .table-row {
+    display: table-row;
+    
+ }
+
+ 

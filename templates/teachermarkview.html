@@ -1,0 +1,68 @@
+{% extends "navtemplate.html" %}
+
+{% block head %}
+      <title>B20 Grades Student Mark Update</title>
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/teachermarkview.css') }}">
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/table.css') }}">
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/footer.css') }}">
+
+{% endblock %}
+{% block content %}
+{% if session.name %}
+
+      <div class = "student-info-container">
+         <div class = "student-card-container">
+            <div class = "card-header ">Teacher Mark Update page</div>
+            <div class = "student-overview-body">Mark for this student.</div>
+         </div>
+      </div>
+
+      <div class = "body-marks-student">
+      <div class = "table-container">
+         <div class = "table-row table-header">
+            <div class = "header-row table-head">Assessment</div>
+            <div class = "header-row table-head">Your Marks</div>
+         </div>
+         <!-- Generate Code -->
+         {% for item, value  in marks.items() %}
+         {% if  loop.index % 2 %} 
+         <div class = "table-row">
+            {% else %} 
+            <div class = "table-row table-row-alt">
+               {% endif %}
+               <div class = "header-row">{{item}}</div>
+               <div class = "header-row">{{value}}</div>
+            </div>
+            {% endfor %}
+            <!-- Generate Code -->
+         </div>
+         <form class = "form-input" action="http://127.0.0.1:5000/grades/{{id}}" method = "post">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <ul class=flashes>
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+              </ul>
+                {% endif %}
+                {% endwith %}
+
+            <div class = "regrade-info-prompt">Assessment Name</div>
+            <input type = "text" name = "assign-name" autocomplete="off" placeholder= "Ex: A1" class = "input-box"/>
+
+            <div class = "regrade-info-prompt">New Grade</div>
+            <input type = "number" name = "new-mark" autocomplete="off" placeholder= "85" class = "input-box"/>
+
+
+            <p>
+               <input class = "submit-btn" type="submit"> 
+            </p>
+         </form>
+      </div>
+      <footer>
+         <img class = "logo" src="{{url_for('static', filename='images/courselogo.svg')}}" alt="utsc cscb20 course logo">
+         <a class = "faculty" href= "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank" >Faculty of CS</a>
+         <div class = "creators">Designed and Developed By Seron, Ryan & Jason</div>
+      </footer>
+      {% endif %}
+      {% endblock %}

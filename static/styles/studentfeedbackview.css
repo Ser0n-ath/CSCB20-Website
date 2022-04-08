@@ -1,0 +1,133 @@
+*{
+    font-family: 'Mulish', sans-serif;
+    margin: 0px;
+}
+
+body{
+    height: 800px;
+}
+
+.feedback-info-container{
+    margin: auto auto;
+    margin-top: 165px;
+    height: 125px;
+    width: 1234px;
+    display: flex;  
+    flex-direction: column; 
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+
+.card-header{
+    margin-top: 32px;
+    margin-left: 45px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.feedback-overview-body{
+    margin-left: 45px;
+    font-size: 16px;
+    width: 1160px;
+    font-weight: lighter;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback-card{
+    display: flex;
+    flex-direction: column;
+    margin: auto auto;
+    align-items: center;
+    background-color: white;
+    margin-top: 50px;
+    width: 700px;
+    height: 1100px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+textarea {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 565px;
+    height: 130px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.question{
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.feedback{
+    margin-left: 20px;
+}
+
+
+.feedback-box-overlay{
+    margin-top: 30px;
+    width: 625px;
+    height: 85px;
+    background: #F1F1F1;
+    border-radius: 8px;
+}
+
+.feedback-box-overlay-name{
+    margin-top: 16px;
+
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.feedback-box-overlay-body{
+    font-size: 16px;
+    font-weight:lighter;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+.feedback-card-head{
+    margin-top: 50px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.submit-res{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto auto;
+    margin-top: 30px;
+    width: 125px;
+    height: 40px;
+    border: none;
+    background: #3751FF;
+    box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+    border-radius: 8px;
+    color:white;
+}
+
+.submit-res:hover{
+    background-color: #4054d3;
+}
+
+.submit-res:active{ 
+    background-color: #1a38fa;
+}
+.dropdownbox{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}

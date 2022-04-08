@@ -1,0 +1,65 @@
+{% extends "navtemplate.html" %}
+
+{% block head %}
+   <title>B20 Grades Student View</title>
+   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/studentmark.css') }}">
+   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/table.css') }}">
+   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/footer.css') }}">
+   <script src="{{url_for('static', filename = 'scripts/grades.js')}}"></script>
+{% endblock %}
+   
+{% block content %}
+{% if session.name %}
+   <div class = "student-info-container">
+      <div class = "student-card-container">
+         <div class = "card-header ">Your Grades</div>
+         <div class = "student-overview-body">A list of your marks so far in this course. Feel free to request a regrade if you feel you deserve better.</div>
+      </div>
+   </div>
+
+   <div class = "body-marks-student">
+   <div class = "table-container">
+      <div class = "table-row table-header">
+         <div class = "header-row table-head">Assessment</div>
+         <div class = "header-row table-head">Your Marks</div>
+      </div>
+      <!-- Generate Code -->
+      {% for item, value  in marks.items() %}
+      {% if  loop.index % 2 %} 
+      <div class = "table-row">
+         {% else %} 
+         <div class = "table-row table-row-alt">
+            {% endif %}
+            <div class = "header-row">{{item}}</div>
+            <div class = "grades">{{value}}</div>
+         </div>
+         {% endfor %}
+         <!-- Generate Code -->
+   
+      </div>
+      <form class = "form-input" action="http://127.0.0.1:5000/markSendRegrade" method = "post">
+         <div class = "regrade-info-prompt">Assessment Requesting for Regrade</div>
+         <textarea type = "text" name="EvaluationName" autocomplete="off" placeholder= "Assessment Type (A1, Midterm)" class = "input-box"></textarea>
+
+
+         <div class = "regrade-info-prompt">Reason</div>
+         <textarea type = "text" name="reason" autocomplete="off" placeholder= "Enter your reasioning" class = "input-box"></textarea>
+
+
+         <p>
+            <input class = "submit-btn" type="submit"> 
+         </p>
+      </form>
+   </div>
+
+   <div id = "average-container">Average: </div>
+   <div id = "gpa-container">GPA : </div>
+
+   <footer>
+      <img class = "logo" src="{{url_for('static', filename='images/courselogo.svg')}}" alt="utsc cscb20 course logo">
+      <a class = "faculty" href= "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank" >Faculty of CS</a>
+      <div class = "creators">Designed and Developed By Seron, Ryan & Jason</div>
+   </footer>
+
+   {% endif %}
+   {% endblock %}

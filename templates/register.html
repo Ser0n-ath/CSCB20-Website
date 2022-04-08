@@ -1,0 +1,47 @@
+{% block content %}
+        <title>B20 Register</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/register.css') }}">
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/table.css')}}"/>
+        <link rel = "stylesheet" href = "{{ url_for('static', filename = 'styles/footer.css')}}"/>  
+
+    
+        <div class = "login-form">
+            <div class = "sign-in-infobox">
+                <img class = "b20-login-logo" src="{{url_for('static', filename='images/loginlogo.png')}}"/>
+                <div class = "sign-in-text">Register</div>
+                <div class = "sign-in-note">Enter your registration details below</div> 
+
+                <div class = "error-block">{{msg}}</div>
+            </div>
+
+            <form class = form-input action="http://127.0.0.1:5000/register" method = "post">
+                <div class = login-info-prompt label for="firstname">First Name</label></div>
+                <input type="text" id="firstname" name="firstname" autocomplete="off" placeholder="First Name" class = "input-box">
+                
+                <div class = login-info-prompt label for="lastname">Last Name</label></div>
+                <input type="text" id="lastname" name="lastname" autocomplete="off" placeholder="Last Name" class = "input-box">
+                
+                <div class = login-info-prompt label for="userid">User ID</label></div>
+                <input type="text" id="username" name="userid" autocomplete="off" placeholder="User Identification" class = "input-box">
+
+                <div class = login-info-prompt label for="email">Email</label></div>
+                <input type="text" id="email" name="email" autocomplete="off" placeholder="Email" class = "input-box">
+
+                <div class = login-info-prompt label for="password">Password</label></div>
+                <input type="password" id="password" name="password" autocomplete="off" placeholder="Password" class = "input-box">
+
+                <p>
+                    <input class = "submit-btn" type="submit">
+                    
+                </p>
+
+
+                <a class="login-btn" href="http://127.0.0.1:5000/login">Already have an account? &nbsp; <span id = "login-text"> Log in!</span></a>
+
+
+
+            </form>
+
+        </div>
+
+{% endblock %}
