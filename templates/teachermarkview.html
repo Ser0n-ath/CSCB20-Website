@@ -5,7 +5,6 @@
       <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/teachermarkview.css') }}">
       <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/table.css') }}">
       <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/footer.css') }}">
-
 {% endblock %}
 {% block content %}
 {% if session.name %}
@@ -36,7 +35,7 @@
             {% endfor %}
             <!-- Generate Code -->
          </div>
-         <form class = "form-input" action="http://127.0.0.1:5000/grades/{{id}}" method = "post">
+         <form class = "form-input" action="/grades/{{id}}" method = "post">
             {% with messages = get_flashed_messages() %}
             {% if messages %}
               <ul class=flashes>

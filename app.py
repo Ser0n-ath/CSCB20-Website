@@ -101,24 +101,26 @@ class RegradeRequests(db.Model): #Creation/Query works. RegradeRequests.uid
 class FeedBack(db.Model): #Creation/Query works. RegradeRequests.uid
     __tablename__ = 'FeedBack'
     feedbackid = db.Column(db.Integer, primary_key=True) #Anon
+    name = db.Column(db.String(200), nullable = False)
     Q1feedback = db.Column(db.String(300), nullable=False, unique = False) 
     Q2feedback = db.Column(db.String(300), nullable=False, unique = False)
     Q3feedback = db.Column(db.String(300), nullable=False, unique = False)
     Q4feedback = db.Column(db.String(300), nullable=False, unique = False)
-    uid = db.Column(db.Integer, db.ForeignKey('User.uid'),primary_key = True, nullable = False)
+
+
     def __init__(self, Q1feedback, Q2feedback, Q3feedback, Q4feedback,uid):
         self.Q1feedback = Q1feedback
         self.Q2feedback = Q2feedback
         self.Q3feedback = Q3feedback
         self.Q4feedback = Q4feedback
-        self.uid = uid
+        self.name = uid
 
     def getFeedBackInfo(self):
-        return {"Q1feedback": self.Q1feedback, "Q2feedback": self.Q2feedback, "Q3feedback": self.Q3feedback, "Q4feedback": self.Q4feedback, "uid": self.uid}
+        return {"Q1feedback": self.Q1feedback, "Q2feedback": self.Q2feedback, "Q3feedback": self.Q3feedback, "Q4feedback": self.Q4feedback, "name": self.name}
 
 
     def __repr__(self):
-        return f"FeedBack('{self.Q1feedback}', '{self.Q2feedback}','{self.Q3feedback}','{self.Q4feedback}','{self.uid}')"
+        return f"FeedBack('{self.Q1feedback}', '{self.Q2feedback}','{self.Q3feedback}','{self.Q4feedback}','{self.name}')"
 
 #------------------------------------ Routes ------------------------------------#
 
@@ -141,17 +143,36 @@ def add_user_debug():
     # me = User(username,hashed_password, firstname, lastname, email, account_type) #We first have to create an object of the User, and fill it up
     # db.session.add(me) #U have to save it in a database session log, [different from user auth sessions]
     # db.session.commit() #Then u commit to have the changes in db.dession applied to commit
-    usernamee = '10201022'
-    passwordd = 'hellolol'
+
+    usernamee = '1234'
+    passwordd = 'admin1'
     hashed_passwordd = bcrypt.generate_password_hash(passwordd).decode('utf8')
-    firstnamee = 'hellolol'
-    lastnamee = 'worldlol'
-    emaill = "helloworldlol@gmail.com"
+    firstnamee = 'first' #Valid name 
+    lastnamee = 'name'
+    emaill = "admin1@gmail.com"
     account_typee = 'admin'
     mee = User(usernamee,hashed_passwordd,firstnamee,lastnamee,emaill,account_typee)
     db.session.add(mee)
     db.session.commit()
     return "added successfully"
+
+
+@app.route("/debug/add1")
+def add_user_debug1():
+
+    usernamee = '11111'
+    passwordd = 'admin2'
+    hashed_passwordd = bcrypt.generate_password_hash(passwordd).decode('utf8')
+    firstnamee = 'firstadmin'
+    lastnamee = 'lastadmin'
+    emaill = "admin2@gmail.com"
+    account_typee = 'admin'
+    mee = User(usernamee,hashed_passwordd,firstnamee,lastnamee,emaill,account_typee)
+    db.session.add(mee)
+    db.session.commit()
+    return "added successfully"
+
+    
 
 @app.route("/debug/readUsers")
 def readUsers_debug():
@@ -194,10 +215,10 @@ def readUsersQueryBySpecificValue_debug():
 
     return str(name)
 
-@app.route("/whosLoggedIn")
+@app.route("/whoami")
 def whosLoggedIn():
     if 'name' in session:
-         return session['name']
+        return session['name']
     return "Nobody is logged in"
 
 
@@ -258,7 +279,7 @@ def register():
         last_name = request.form.get('lastname')
         email  = request.form.get('email')
         
-        nonempty_fields = has_empty_input(username, password, first_name,last_name, email)
+        nonempty_fields = has_empty_input(username, password, first_name, last_name, email)
         uid_exists = user_id_exists(username) #If true then uid doesn't exist [good]
         email_exists = email_taken(email)
 
@@ -277,8 +298,6 @@ def register():
         elif '@' not in email:
             msg_holder = 'Please provide a valid email'
             print("Please provide a valid email")
-        # regex 
-        # @ryan is this elif not good enough?
         else:#Checks are good, create account and redirect to homepage. 
             create_user(username, password, first_name, last_name, email)
             check_login(username, password) #Correct password by precondition
@@ -321,7 +340,9 @@ def mark_page():
         return redirect(url_for('login'))
     user_role =  session['name']['account_type']
     if(user_role == 'student'):
+        print(session['name']['uid'])
         result = getMarkList(session['name']['uid'])
+
         result.pop('uid')
         return render_template('studentmarkview.html', marks = result)
     
@@ -419,29 +440,6 @@ def readRegrade() -> List[List]: #Returns a list of dicts of all students in the
         regrade_dict.append(request)
     return regrade_dict
 
-def readFeedback() -> List[List]: #Returns a list of dicts of all students in the db
-    result = FeedBack.query.all() #Queries all Feedback
-    feedback_dict = []
-    for feedback in result:
-        studentfeedback = feedback.getFeedBackInfo()
-        feedback_dict.append(studentfeedback)
-    return feedback_dict
-
-
-
-#its on now
-#yo debug mode is off
-#Teachers Mark View
-
-#Show All Regrade Requests
-#Show all Students 
-
-
-#Teacher Single View
-#-> Show students grades
-#-> Add ability to upgrade Grades
-#-> Show students regrade Requests
-
 
 
 #If the person for somereason went to this url, then redirect them to the mark page. 
@@ -459,9 +457,8 @@ def sendRegrade():
     type = request.form.get('EvaluationName') #UID
     reason = request.form.get('reason')
     uid = session['name']['uid']
-    #ook
-    ##can u add our navbar logo from a2 into images 
-    regradeObj =  RegradeRequests(uid, type, reason) #i'm gonna change the param to uid
+
+    regradeObj =  RegradeRequests(uid, type, reason) 
 
     try:
         db.session.add(regradeObj)
@@ -475,51 +472,60 @@ def sendRegrade():
 
 #-------------------------------------------------------------------------------------------------------#
 
+def readFeedback() -> List[List]: #Returns a list of dicts of all students in the db
+    result = FeedBack.query.all() #Change query to fit username. 
+
+    feedback_dict = []
+    for feedback in result:
+        studentfeedback = feedback.getFeedBackInfo()
+        feedback_dict.append(studentfeedback)
+    return feedback_dict
 
 
 
 
 #-------------------------------------------------------------------------------------------------------#
+@app.route("/feedback", methods = ['GET','POST']) 
+def Feedback():# should i off it
 
-
-@app.route("/studentfeedback", methods = ['GET','POST']) 
-def StudentFeedback():# should i off it
     if 'name' not in session:
         return redirect(url_for('login'))
 
-    result = User.query.filter(User.account_type.like('admin'))
-    teachers = []
-    for user in result:
-        account = user.get_teacher_details()
-        teachers.append(account)
+    user_role =  session['name']['account_type']
 
-    if request.method == 'POST':
-        Q1Answer = request.form.get('Question1') 
-        Q2Answer = request.form.get('Question2')
-        Q3Answer = request.form.get('Question3')
-        Q4Answer = request.form.get('Question4')
-        uid = request.form.get('ChooseTeacher')
-        FeedbackObj = FeedBack(Q1Answer,Q2Answer,Q3Answer,Q4Answer,uid)
-        db.session.add(FeedbackObj)
-        db.session.commit()
+    if(user_role == 'student'):
+        result = User.query.filter(User.account_type.like('admin'))
+        teachers = []
+        for user in result:
+            account = user.get_teacher_details()
+            teachers.append(account)
+
+
+        if request.method == 'POST':
+            Q1Answer = request.form.get('Question1') 
+            Q2Answer = request.form.get('Question2')
+            Q3Answer = request.form.get('Question3')
+            Q4Answer = request.form.get('Question4')
+            name = request.form.get('ChooseTeacher')
+
+            FeedbackObj = FeedBack(Q1Answer,Q2Answer,Q3Answer,Q4Answer,name)
+
+            db.session.add(FeedbackObj)
+            db.session.commit()
+            return render_template('studentfeedbackview.html', teachers = teachers)
         return render_template('studentfeedbackview.html', teachers = teachers)
 
-    return render_template('studentfeedbackview.html', teachers = teachers)
+
+    feedback = readFeedback()
+    return render_template('teacherfeedbackview.html', feedback_bk = feedback)
     
-    #test it
-#--------------------------------------Helper Functions ---------------------------------#
-# why this shiot keep reverting i cant even do anything frontend cuz of this 
-#idk why but the statements keep getting edited in this func
-#haunted shit hell nah is that u
-#yo for this func why is my thing underlined 
-#it should be correct no?
-#wtf is that syntax error
-#now it is me
-#i changed it to 100 earlier mb
-#nw ima test it
-#nah someone changed the default from 0 to 100
-#why all my marks 100 did u guys do that
-#check if ur keys are sticking or somethin
+    #test it how can itest it if it doesnt 
+#--------------------------------------Generic Form ---------------------------------#
+
+
+
+
+
 
 
 def getMarkList(username:int):

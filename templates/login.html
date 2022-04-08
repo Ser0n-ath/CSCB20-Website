@@ -12,18 +12,17 @@
 
                 <div class = "error-block">{{msg}}</div>
             </div>
-            <form class = "form-input" action="http://127.0.0.1:5000/login" method = "post">
+            <form class = "form-input" action="/login" method = "post">
                 <div class = login-info-prompt>UID</div>
                 <input type = "text" name = "uid" autocomplete="off" placeholder= "User Identification" class = "input-box"/>
     
                 <div class = login-info-prompt>Password</div>
                 <input type = "password" name = "password" autocomplete="off" placeholder="Password" class = "input-box"/>
-         
                 <p>
                     <input class = "submit-btn" type="submit"> 
                 </p>
 
-                <a class="register-btn" href="http://127.0.0.1:5000/register">Don't have an account? &nbsp; <span id = "register-text"> Register!</span> </a>
+                <a class="register-btn" href="/register">Don't have an account? &nbsp; <span id = "register-text"> Register!</span> </a>
             </form>
         </div>
 

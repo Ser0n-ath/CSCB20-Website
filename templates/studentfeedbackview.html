@@ -17,7 +17,17 @@
             </div>
 
             
-            <form class = form-input action="http://127.0.0.1:5000/studentfeedback" method = "post">
+            <form class = form-input action="/feedback" method = "post">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  <ul class=flashes>
+                  {% for message in messages %}
+                    <li>{{ message }}</li>
+                  {% endfor %}
+                  </ul>
+                    {% endif %}
+                    {% endwith %}
+
                 <div class = "question">
                     <div class = "feedback" label for="Question1">1) What do you like about the instructor teaching? </label></div>
                     <textarea type="text" id = "Question1" name="Question1" autocomplete="off"> </textarea>
@@ -48,8 +58,10 @@
                     </select>
                     </div>
                 </div>
+                <input id = "resp" class = "submit-res" type="submit"> 
+
             </form>
-            <button id = "resp" class = "submit-res">Submit</button>
+           
         </div>
         
         <footer>

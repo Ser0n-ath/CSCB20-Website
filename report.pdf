@@ -1,0 +1,10 @@
+We got all features of the core requirements completed. The features we currently have working are
+the log in and register pages, the student grades page where it displays all the student's assessment marks,
+the option for the student to submit a remark request, the anonymous student feedback page for a certain instructor,
+the instructor grades page where all his/her students grades for the course are displayed,the remark requests page
+where the instructor could see all remark requests made by studentss and finally an option where the instructor could
+enter a mark for any of their student's assessmentsn and the feedback page for the instructor where he/she could see of all 
+his/her student's anonymous feedback. Seron worked on most of the backend implementation of the website, 
+Ryan worked mostly on the frontend implementation of the website while Jason assisted both of them with some parts 
+of the frontend and backend of the website. With respect to all of these features, Seron worked on roughly 35% of the website, 
+Ryan worked approximately 33% while Jason worked on approximately 32% of the website. 

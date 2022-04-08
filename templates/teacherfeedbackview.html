@@ -1,0 +1,55 @@
+{% extends "navtemplate.html" %}
+
+{% block head %}
+      <title>B20 Anon Feedback</title>
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/footer.css') }}">
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/teacherfeedback.css') }}">
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/table.css') }}">
+{% endblock %}
+{% block content %}
+{% if session.name %}
+
+
+
+<div class = "regrade-card">
+    <div class = "regrade-info-container">
+        <div class = "regrade-card-container">
+            <div class = "card-header ">Feedback from Students</div>
+            <div class = "regrade-overview-body">List of Feedback Given.</div>
+        </div>
+    </div> 
+
+
+    <div class = "table-container-student">
+        <div class = "table-row table-header">
+            <div class = "header-row table-head">1) What do you like about the instructor teaching?</div>
+            <div class = "header-row table-head">2) What do you recommend the instructor to do to improve their teaching?</div>
+            <div class = "header-row table-head">3) What do you like about the labs?</div>
+            <div class = "header-row table-head">4) What do you recommend the lab instructors to do to improve their lab teaching? </div>
+            <div class = "header-row table-head">Teacher Name</div>
+        </div>
+
+
+
+
+        {% for feedback in feedback_bk %}
+            {% if  loop.index % 2 %} <div class = "table-row">
+            {% else %} <div class = "table-row table-row-alt">
+            {% endif %}
+            {% for key, value in feedback.items() %}
+                <div class = "header-row">{{value}}</div>
+            {% endfor %}
+                
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<footer>
+    <img class = "logo" src="{{url_for('static', filename='images/courselogo.svg')}}" alt="utsc cscb20 course logo">
+    <a class = "faculty" href= "https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target = "_blank" >Faculty of CS</a>
+    <div class = "creators">Designed and Developed By Seron, Ryan & Jason</div>
+ </footer>
+
+
+{% endif %}
+{% endblock %} 

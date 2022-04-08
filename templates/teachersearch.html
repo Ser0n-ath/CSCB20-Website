@@ -13,16 +13,14 @@
 
 
         
-        <div class = "student-card">
-            <div class = "student-info-container">
-                <div class = "student-card-container">
-                    <div class = "card-header ">Student</div>
-                    <div class = "student-overview-body">This list contains all students currently enrolled in CSCB20 Winter 2022</div>
-                </div>
-            </div> 
+        <div class = "student-info-container">
+            <div class = "student-card-container">
+                <div class = "card-header ">Student</div>
+                <div class = "student-overview-body">This list contains all students currently enrolled in CSCB20 Winter 2022</div>
+            </div>
+        </div> 
 
-
-            <div class = "table-container-student">
+        <div class = "table-container-student">
                 <div class = "table-row table-header">
                     <div class = "header-row table-head">View</div>
                     <div class = "header-row table-head">Student Number</div>
@@ -38,7 +36,7 @@
                     {% for key, value in user.items() %}
                         {% if key == "uid" %} 
                             {% set x = value %}
-                            <a class="register-btn" href="http://127.0.0.1:5000/grades/{{x}}">View</a>
+                            <a class="register-btn" href="/grades/{{x}}">View</a>
                         {% endif %}
                         <div class = "header-row">{{value}}</div>
                     {% endfor %}
@@ -46,7 +44,6 @@
                     </div>
                 {% endfor %}
             </div>
-        </div>
 
         <br>
         <br>
@@ -56,13 +53,13 @@
 
 
         <div class = "regrade-card">
+            
             <div class = "regrade-info-container">
                 <div class = "regrade-card-container">
                     <div class = "card-header ">Regrade Requests</div>
                     <div class = "regrade-overview-body">List of all Regrade attempts.</div>
                 </div>
             </div> 
-
 
             <div class = "table-container-student">
                 <div class = "table-row table-header">
@@ -80,7 +77,7 @@
                     {% for key, value in regrade.items() %}
                         {% if key == "uid" %} 
                             {% set x = value %}
-                            <a class="register-btn" href="http://127.0.0.1:5000/grades/{{x}}">View</a>
+                            <a class="register-btn" href="/grades/{{x}}">View</a>
                         {% endif %}
                         <div class = "header-row">{{value}}</div>
                     {% endfor %}
@@ -89,10 +86,6 @@
                 {% endfor %}
             </div>
         </div>
-
-
-
-
 
         {% endif %}
         {% endblock %}
