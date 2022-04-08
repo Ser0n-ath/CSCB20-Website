@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
+{% extends "navtemplate.html" %}
+
+{% block head %}
+
+
         <title>B20 Grades Teacher View</title>
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/teachersearch.css') }}">
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/table.css') }}">
+        {% endblock %}
+        {% block content %}
+        {% if session.name %}
 
-    </head>
-    <body>
+
+
         
         <div class = "student-card">
             <div class = "student-info-container">
@@ -89,8 +94,5 @@
 
 
 
-
-            
-    </body>
-
-</html>
+        {% endif %}
+        {% endblock %}

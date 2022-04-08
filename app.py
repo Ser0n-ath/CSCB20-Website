@@ -419,6 +419,14 @@ def readRegrade() -> List[List]: #Returns a list of dicts of all students in the
         regrade_dict.append(request)
     return regrade_dict
 
+def readFeedback() -> List[List]: #Returns a list of dicts of all students in the db
+    result = FeedBack.query.all() #Queries all users
+    feedback_dict = []
+    for feedback in result:
+        studentfeedback = feedback.
+        feedback_dict.append(request)
+    return regrade_dict
+
 
 
 #its on now
